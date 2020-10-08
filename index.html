@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="service.js"></script>
+</head>
+<body ng-controller="controlador as vm">
+  <h1>{{ vm.teste }}</h1>
+  <form ng-submit="vm.buscarCEP()">
+    <input type="text" name="nome" id="nome" ng-model="vm.cepDigitado" required>
+    <button type="submit">Buscar CEP</button>
+  </form>
+  <hr>
+  <div ng-if="vm.resultadoCEP">
+    <pre>{{ vm.resultadoCEP | json }}</pre>
+  </div>
+</body>
+</html>
